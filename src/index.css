@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors - extracted from Stitch design system */
+  --color-bg-base: #111319;
+  --color-bg-surface: #191b22;
+  --color-bg-surface-2: #1e1f26;
+  --color-bg-surface-3: #282a30;
+  --color-text-primary: #e2e2eb;
+  --color-text-muted: #9f8e7a;
+  --color-accent: #f5a623;
+  --color-accent-glow: #ffc880;
+  --color-positive: #3ac2ff;
+  --color-negative: #ffb4ab;
+  --color-border: #524534;
+  --color-tertiary: #9bd9ff;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-on-accent: #452b00;
+
+  /* Typography - mapped to requested fonts */
+  --font-display: "Playfair Display", serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-body: "IBM Plex Mono", monospace;
+
+  /* Spacing and geometry */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+
+  --shadow-ambient: 0px 12px 32px rgba(245, 166, 35, 0.08);
+  --shadow-card: 0px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.light {
+  --color-bg-base: #e2e2eb;
+  --color-bg-surface: #f5f2eb;
+  --color-bg-surface-2: #ece7dd;
+  --color-bg-surface-3: #dfd7ca;
+  --color-text-primary: #2e3037;
+  --color-text-muted: #6f6352;
+  --color-accent: #835500;
+  --color-accent-glow: #f5a623;
+  --color-positive: #006089;
+  --color-negative: #93000a;
+  --color-border: #9f8e7a;
+  --color-tertiary: #004d6a;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-on-accent: #f5f2eb;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-bg-base text-text-primary font-body;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .ledger-card {
+    @apply bg-bg-surface border-t-2 border-accent;
+  }
+
+  .ledger-badge {
+    @apply px-2 py-1 text-[10px] uppercase tracking-[0.14em] font-mono;
+  }
+
+  .ledger-input {
+    @apply bg-bg-surface-2 border border-border/20 focus:border-accent focus:ring-1 focus:ring-accent;
+  }
+
+  .ledger-table-row {
+    @apply transition-colors hover:bg-bg-surface-2;
+  }
+
+  .ledger-chart-wrap {
+    @apply bg-bg-surface border-t-2 border-accent p-6 lg:p-8;
+  }
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  min-width: max-content;
+  animation: ticker 26s linear infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 220ms ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 240ms ease-out;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
