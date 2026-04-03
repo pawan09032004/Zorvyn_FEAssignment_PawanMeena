@@ -8,14 +8,6 @@ Assignment submission for a production-style React dashboard that turns raw tran
 ![Recharts](https://img.shields.io/badge/Recharts-Analytics-111827)
 ![State](https://img.shields.io/badge/State-Context%20%2B%20useReducer-1f2937)
 
-## Why This Submission Stands Out
-
-- Product thinking, not just UI: every screen answers a practical finance question (status, drill-down, forecast).
-- Deterministic architecture: centralized reducer, explicit actions, and serializable state for predictable behavior.
-- Analyst-grade interaction model: filters, sorting, pagination, chart-to-table drill-down, and undoable destructive actions.
-- Thoughtful UX polish: animated KPI count-up, role-aware controls, market ticker, and responsive desktop/mobile navigation.
-- Resilience by default: chart rendering is wrapped in an error boundary to avoid full-screen failures.
-
 ## What The App Does
 
 ### 1) Overview
@@ -111,15 +103,5 @@ src/
 	2. API-backed persistence with optimistic updates and conflict handling.
 	3. Code-splitting to reduce initial bundle size.
 	4. Export flows (CSV/PDF) for reporting.
-
-## Evaluation Guide (For Reviewers)
-
-1. Start in Viewer mode and inspect the analytics flow across all tabs.
-2. Switch to Admin mode and create/edit/delete transactions.
-3. Use donut click-through from Overview to Transactions to validate cross-screen state coupling.
-4. Refresh the page to confirm persisted state recovery.
-
 ---
-
-If you are hiring for frontend engineers who can blend product intuition, data modeling, and design execution, this submission is built to demonstrate exactly that.
 # Zorvyn_FEAssignment_PawanMeena
